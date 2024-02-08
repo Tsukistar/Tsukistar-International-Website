@@ -1,5 +1,9 @@
 {
     "files": [],
+    "compilerOptions": {
+        "module": "es2022",
+        // 其他选项...
+      },
     "references": [
         {
             "path": "./tsconfig.node.json"

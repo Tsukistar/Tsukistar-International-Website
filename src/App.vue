@@ -22,8 +22,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 const setLanguage = (language: string) => {
 	locale.value = language
 	document.title = t('title')
