@@ -1,54 +1,43 @@
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
 # Tsukistar International Website
-This is "Tsukistar International Website" developed by Vue 3 in Vite.
 
-This template should help get you started developing with Vue 3 in Vite.
+A brief description of what this project does and who it's for
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Authors
 
-## Type Support for `.vue` Imports in TS
+- [@月落星河Tsukistar](https://www.github.com/Tsukistar)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Tech Stack
 
-1. Disable the built-in TypeScript Extension
-   1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+**Client:** React, Redux, TailwindCSS
 
-## Customize configuration
+**Server:** Node, Express
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## License
 
-```sh
-npm install
-```
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
+## Support
 
-### Type-Check, Compile and Minify for Production
+For support, email tsukistar.bilibili@gmail.com or visit my [Patreon](https://tsukistar.cc/patreon).
 
-```sh
-npm run build
-```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Appendix
 
-```sh
-npm run test:unit
-```
+Thanks [readme.so](https://readme.so/) for helping me write the readme.en_US.md document.
 
-### Lint with [ESLint](https://eslint.org/)
+Thanks [colorhunt.co](https://colorhunt.co/) for giving me some Color Palettes.
 
-```sh
-npm run lint
-```
-
+All of the icons this website used are from [Phosphor Icons](https://github.com/phosphor-icons/core) which License is MIT, and I've found it in [Yesicon](https://yesicon.app)

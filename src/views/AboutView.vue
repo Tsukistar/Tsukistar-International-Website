@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-
+        <p>This is the about page</p>
     </div>
 </template>
 
@@ -10,9 +10,10 @@
 <style>
 @media (min-width: 1024px) {
     .about {
-        min-height: 100vh;
+        min-height: 80vh;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 }
 </style>

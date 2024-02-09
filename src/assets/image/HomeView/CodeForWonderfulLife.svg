@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.86 552.77">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-family: SourceHanSansSC-Bold-GBpc-EUC-H, 'Source Han Sans SC';
+        font-size: 100.03px;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: #7c93c3;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <text class="cls-3" transform="translate(0 88.03)"><tspan class="cls-6" x="0" y="0">C</tspan><tspan class="cls-1" x="65.62" y="0">oding</tspan><tspan class="cls-2" x="0" y="120.04">F</tspan><tspan class="cls-6" x="56.62" y="120.04">or </tspan><tspan class="cls-1" x="185.55" y="120.04">the</tspan><tspan class="cls-1" x="0" y="240.08">Wond</tspan><tspan class="cls-5" x="282.69" y="240.08">er</tspan><tspan class="cls-1" x="384.42" y="240.08">ful</tspan><tspan class="cls-1" x="0" y="360.11">L</tspan><tspan class="cls-6" x="57.82" y="360.11">i</tspan><tspan class="cls-4" x="88.23" y="360.11">f</tspan><tspan class="cls-1" x="124.24" y="360.11">e</tspan></text>
+  </g>
+</svg>

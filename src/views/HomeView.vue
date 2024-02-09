@@ -1,9 +1,86 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="container">
+        <video ref="videoRef" autoplay loop muted class="background-video">
+            <source src="https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+        </video>
+        <div class="overlay">
+            <img class="logo" src="../assets/image/logo.png" alt="Tsukistar's Logo">
+            <img class="slogan" src="../assets/image/HomeView/CodeForWonderfulLife.svg" alt="Tsukistar's Slogan">
+            <img class="mouse" src="../assets/image/HomeView/PhMouseSimpleWhite.svg" alt="mouse SVG">
+            <img class="arrow-down" src="../assets/image/HomeView/PhArrowDownLightWhite.svg" alt="Arrow SVG">
+        </div>
+    </div>
 </template>
+  
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const videoRef = ref()
+
+</script>
+  
+<style scoped>
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 150px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.slogan {
+    width: 300px;
+}
+
+.mouse {
+    width: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.arrow-down {
+    width: 30px;
+    animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+</style>

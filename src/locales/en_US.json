@@ -1,5 +1,8 @@
 {
     "title": "Tsukistar's Fantasy Hometown",
-    "stories": "Stories",
-    "about": "Hello, I'm Tsukistar."  
+    "introduction": "Hello, I'm Tsukistar.",
+    "home": "home",
+    "doing": "What I do",
+    "Gallery": "Gallery",
+    "about": "About me"
 }
