@@ -1,8 +1,14 @@
 {
-    "title":"星河夜夢記",
+    "title": "星河夜夢記",
     "introduction": "你好呀，我是月落星河Tsukistar，是一名前端开发工程师，同时也是一名个人博主和一名主播。",
     "home": "首頁",
     "doing": "動態",
     "Gallery": "相冊",
-    "about": "關於我"
+    "about": "關於我",
+    "playGames": "歡樂的遊戲時光",
+    "painting": "畫一些可愛的貓貓和有愛的朋友",
+    "coding": "你所熱愛的，就是你的程式碼",
+    "onecomme": "做一些OneComme上用的直播間聊天框",
+    "singing": "只為你而唱的歌",
+    "streaming": "在Youtube和圖奇上直播"
 }
