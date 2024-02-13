@@ -7,7 +7,7 @@
 		</transition>
 		<el-main>
 			<router-view v-slot="{ Component }">
-				<transition name="slide-fade" mode="out-in">
+				<transition :name="transitionName" mode="out-in">
 					<component :is="Component" />
 				</transition>
 			</router-view>
@@ -17,7 +17,7 @@
 				<Footer />
 			</el-footer>
 		</transition>
-		<div class="mouse-scroll-img">
+		<div class="mouse-scroll-img" v-if="showHeaderFooter">
 			<img class="mouse" src="./assets/image/HomeView/PhMouseSimple.svg" alt="mouse SVG">
 			<img class="arrow-down" src="./assets/image/HomeView/PhArrowDownLight.svg" alt="Arrow SVG">
 		</div>
@@ -46,16 +46,29 @@ watch(() => route.path, (newPath: string) => {
 	}
 });
 
+let lastScrollTime = 0;
+const throttleTime = 500;
+
+const transitionName = ref('slide-fade-down');
+
 const handleScroll = (event: WheelEvent) => {
-	const currentRouteIndex = routes.indexOf(router.currentRoute.value.path)
-	if (event.deltaY > 0 && currentRouteIndex < routes.length - 1) {
-		// Scroll down
-		router.push(routes[currentRouteIndex + 1])
-	} else if (event.deltaY < 0 && currentRouteIndex > 0) {
-		// Scroll up
-		router.push(routes[currentRouteIndex - 1])
+	const currentRouteIndex = routes.indexOf(router.currentRoute.value.path);
+	const currentTime = new Date().getTime();
+
+	if (currentTime - lastScrollTime > throttleTime) {
+		if (event.deltaY > 0 && currentRouteIndex < routes.length - 1) {
+			// Scroll down
+			transitionName.value = 'slide-fade-up';
+			router.push(routes[currentRouteIndex + 1]);
+		} else if (event.deltaY < 0 && currentRouteIndex > 0) {
+			// Scroll up
+			transitionName.value = 'slide-fade-down';
+			router.push(routes[currentRouteIndex - 1]);
+		}
+
+		lastScrollTime = currentTime;
 	}
-}
+};
 
 onMounted(() => {
 	window.addEventListener('wheel', handleScroll)
@@ -101,7 +114,7 @@ onUnmounted(() => {
 	display: flex;
 	flex-direction: column;
 	position: fixed;
-	right: 5px;
+	right: 15px;
 	bottom: 15px;
 	z-index: 1000;
 }
@@ -134,17 +147,31 @@ onUnmounted(() => {
 	}
 }
 
-.slide-fade-enter-active {
+.slide-fade-down-enter-active {
 	transition: all .3s ease;
 }
 
-.slide-fade-leave-active {
+.slide-fade-down-leave-active {
 	transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 
-.slide-fade-enter,
-.slide-fade-leave-to {
+.slide-fade-down-enter,
+.slide-fade-down-leave-to {
 	transform: translateY(100px);
+	opacity: 0;
+}
+
+.slide-fade-up-enter-active {
+	transition: all .3s ease;
+}
+
+.slide-fade-up-leave-active {
+	transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-up-enter,
+.slide-fade-up-leave-to {
+	transform: translateY(-100px);
 	opacity: 0;
 }
 

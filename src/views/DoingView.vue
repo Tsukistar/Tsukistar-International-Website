@@ -1,6 +1,6 @@
 <template>
     <div class="doing">
-        <el-row :gutter="50"  style="margin-bottom: 10px;">
+        <el-row :gutter="20" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">
             <el-col :span="8">
                 <el-card :body-style="{ padding: '0px' }" shadow="hover">
                     <img class="image" src="../assets/image/DoingView/TestImage.jpg" />
@@ -26,7 +26,7 @@
                 </el-card>
             </el-col>
         </el-row>
-        <el-row :gutter="50">
+        <el-row :gutter="20" style="padding-left: 50px;padding-right: 50px;">
             <el-col :span="8">
                 <el-card :body-style="{ padding: '0px' }" shadow="hover">
                     <img class="image" src="../assets/image/DoingView/TestImage.jpg" />
@@ -39,7 +39,7 @@
                 <el-card :body-style="{ padding: '0px' }" shadow="hover">
                     <img class="image" src="../assets/image/DoingView/TestImage.jpg" />
                     <div style="padding: 14px;text-align: center;">
-                        <span>Singing</span>
+                        <h4>Singing</h4>
                     </div>
                 </el-card>
             </el-col>

@@ -23,15 +23,25 @@ import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
 const { locale } = useI18n();
-const changeLanguage = (language:string) => {
-  locale.value = language;
+const changeLanguage = (language: string) => {
+    locale.value = language;
+    setPageTitle();
 };
 
 const router = useRouter();
 
-const goTo = (routeName:string) => {
-  router.push({ name: routeName });
+const goTo = (routeName: string) => {
+    router.push({ name: routeName });
 };
+
+// Set page title based on language
+const { t } = useI18n();
+const setPageTitle = () => {
+    const title = t('title');
+    document.title = title;
+};
+
+setPageTitle();
 </script>
 
 <style scoped>
