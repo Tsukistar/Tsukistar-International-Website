@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <video ref="videoRef" autoplay loop muted class="background-video">
-            <source src="https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+            <source src="../assets/background-video.mp4" type="video/mp4">
         </video>
         <div class="overlay">
             <img class="logo" src="../assets/image/logo.png" alt="Tsukistar's Logo">
-            <img class="slogan" src="../assets/image/HomeView/CodeForWonderfulLife.svg" alt="Tsukistar's Slogan">
+            <h1 class="slogan">Coding for the wonderful life!</h1>
             <img class="mouse" src="../assets/image/HomeView/PhMouseSimpleWhite.svg" alt="mouse SVG">
             <img class="arrow-down" src="../assets/image/HomeView/PhArrowDownLightWhite.svg" alt="Arrow SVG">
         </div>
@@ -40,7 +40,7 @@ const videoRef = ref()
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,12 +55,17 @@ const videoRef = ref()
 }
 
 .slogan {
-    width: 300px;
+    color: white;
+    font-size: 5rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .mouse {
     width: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
