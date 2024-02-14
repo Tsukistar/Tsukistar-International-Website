@@ -1,14 +1,14 @@
 <!--Header.vue-->
 <template>
-    <el-menu mode="horizontal" :ellipsis="false">
+    <el-menu mode="horizontal" :ellipsis="false" :default-active="activePath">
         <el-menu-item index="logo" @click="goTo('Home')">
             <img class="logo" src="../assets/image/logo.png" alt="Logo" />
         </el-menu-item>
         <div class="flex-grow" />
-        <el-menu-item index="1" @click="goTo('Home')">{{ $t('home') }}</el-menu-item>
-        <el-menu-item index="2" @click="goTo('Doing')">{{ $t('doing') }}</el-menu-item>
-        <el-menu-item index="3" @click="goTo('Gallery')">{{ $t('Gallery') }}</el-menu-item>
-        <el-menu-item index="4" @click="goTo('About')">{{ $t('about') }}</el-menu-item>
+        <el-menu-item index="" @click="goTo('Home')">{{ $t('home') }}</el-menu-item>
+        <el-menu-item index="/doing" @click="goTo('Doing')">{{ $t('doing') }}</el-menu-item>
+        <el-menu-item index="/gallery" @click="goTo('Gallery')">{{ $t('Gallery') }}</el-menu-item>
+        <el-menu-item index="/about" @click="goTo('About')">{{ $t('about') }}</el-menu-item>
         <span class="right-menu">|</span>
         <div class="select-language">
             <el-link @click="changeLanguage('zh-CN')" style="margin-right: 5px;">简体中文</el-link>/
@@ -19,10 +19,15 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
 import { useRouter } from 'vue-router';
 const { t } = useI18n();
 const { locale } = useI18n();
+
+const route = useRoute();
+const activePath = ref(route.path);
 
 const changeLanguage = (language: string) => {
     locale.value = language;
@@ -42,6 +47,12 @@ const setPageTitle = () => {
 };
 
 setPageTitle();
+
+// Watch route change
+watch(() => route.path, newPath => {
+    activePath.value = newPath
+    console.log('activePath', activePath.value);
+});
 </script>
 
 <style scoped>
