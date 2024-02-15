@@ -1,10 +1,11 @@
 <template>
     <div class="about">
-        <p>This is the about page</p>
+        <p>aaa</p>
     </div>
 </template>
 
 <script setup lang="ts">
+
 </script>
 
 <style>

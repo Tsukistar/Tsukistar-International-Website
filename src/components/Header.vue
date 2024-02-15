@@ -51,7 +51,6 @@ setPageTitle();
 // Watch route change
 watch(() => route.path, newPath => {
     activePath.value = newPath
-    console.log('activePath', activePath.value);
 });
 </script>
 

@@ -1,18 +1,72 @@
 <template>
     <div class="gallery">
-        <el-carousel :interval="4000" type="card" height="500px" style="width: 100%;">
-            <el-carousel-item v-for="item in items" :key="item" style="display: block;">
-                <img src="../assets/image/GalleryView/2024-new-year-Eve.jpg" alt="Test Image" style="width: 100%;" />
+        <el-carousel :interval="4000" type="card" height="500px" style="width: 100%;" @change="handleCarouselChange">
+            <el-carousel-item v-for="story in activeStories" :key="story.index" style="display: block;">
+                <img :src="`/src/assets/image/GalleryView/${story.imageURL}`" alt="Test Image" style="width: 100%;" />
+                <el-button class="dialog-button" :icon="FullScreen" @click="handleClickCarousel(story.index)" />
             </el-carousel-item>
         </el-carousel>
-        <div class="click-notification-text">💡单击每张插图都可以看到一个小故事哦</div>
+        <el-dialog v-model="dialogVisible" top="5vh" width="450px">
+            <img :src="`/src/assets/image/GalleryView/${activeStories[clickCarouselIndex].imageURL}`"
+                style="width: 100%;margin-top: 10px;" />
+        </el-dialog>
+        <div class="click-notification-text">{{ activeStories[activeCarouselIndex].content }}</div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+import stories_en_US from '../data/stories_en_US.json';
+import stories_zh_CN from '../data/stories_zh_CN.json';
+import stories_zh_TW from '../data/stories_zh_TW.json';
+import { FullScreen } from '@element-plus/icons-vue'
 
-const items = ref([1, 2, 3, 4, 5, 6]); // 创建一个包含 4 个元素的数组
+const { locale } = useI18n();
+
+interface Story {
+    index: number;
+    imageURL: string;
+    content: string;
+}
+
+let activeStories: Story[];
+
+const setActiveStories = () => {
+    switch (locale.value) {
+        case 'en-US':
+            activeStories = stories_en_US;
+            break;
+        case 'zh-CN':
+            activeStories = stories_zh_CN;
+            break;
+        case 'zh-TW':
+            activeStories = stories_zh_TW;
+            break;
+        default:
+            activeStories = stories_en_US;
+            break;
+    }
+};
+
+const activeCarouselIndex = ref(0);
+const handleCarouselChange = (activeIndex: number) => {
+    activeCarouselIndex.value = activeIndex;
+};
+
+const dialogVisible = ref(false);
+const clickCarouselIndex = ref(0);
+const handleClickCarousel = (index: number) => {
+    clickCarouselIndex.value = index;
+    dialogVisible.value = true;
+};
+
+watch(locale, () => {
+    setActiveStories();
+});
+
+setActiveStories();
+
 </script>
 
 <style scoped>
@@ -25,27 +79,20 @@ const items = ref([1, 2, 3, 4, 5, 6]); // 创建一个包含 4 个元素的数�
     }
 }
 
-.el-carousel__item h3 {
-  color: #475669;
-  opacity: 0.75;
-  line-height: 200px;
-  margin: 0;
-  text-align: center;
-}
-
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2n + 1) {
-  background-color: #d3dce6;
-}
-
 .click-notification-text {
     text-align: center;
-    margin-top: 20px;
+    margin: 30px 60px 0 60px;
     font-size: 20px;
     color: #475669;
     opacity: 0.75;
+}
+
+.dialog-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
 }
 </style>
