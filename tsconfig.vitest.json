@@ -1,6 +1,13 @@
 {
     "extends": "./tsconfig.app.json",
-    "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.vue.ts", "src/**/*.d.ts", "src/locales/*.json"],
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.vue",
+        "src/**/*.vue.ts",
+        "src/**/*.d.ts",
+        "src/locales/*.json",
+        "src/data/*.json",
+    ],
     "exclude": ["node_modules"],
     "compilerOptions": {
         "composite": true,
