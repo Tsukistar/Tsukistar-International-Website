@@ -3,14 +3,17 @@
         <el-carousel :interval="4000" type="card" height="500px" style="width: 100%;" @change="handleCarouselChange">
             <el-carousel-item v-for="story in activeStories" :key="story.index" style="display: block;">
                 <img :src="`/assets/image/GalleryView/${story.imageURL}`" alt="Test Image" style="width: 100%;" />
-                <el-button class="dialog-button" :icon="FullScreen" @click="handleClickCarousel(story.index)" />
+                <el-button class="open-dialog-button" :icon="FullScreen" @click="handleClickCarousel(story.index)" />
             </el-carousel-item>
         </el-carousel>
-        <el-dialog v-model="dialogVisible" top="5vh" width="450px">
-            <img :src="`/src/assets/image/GalleryView/${activeStories[clickCarouselIndex].imageURL}`"
-                style="width: 100%;margin-top: 10px;" />
-        </el-dialog>
         <div class="click-notification-text">{{ activeStories[activeCarouselIndex].content }}</div>
+    </div>
+    <div class="custom-overlay" v-if="dialogVisible">
+        <div class="custom-dialog">
+            <img :src="`/assets/image/GalleryView/${activeStories[clickCarouselIndex].imageURL}`"
+                style="width: auto" />
+                <el-button class="close-dialog-button" :icon="Close" @click="dialogVisible = false" />
+        </div>
     </div>
 </template>
 
@@ -20,7 +23,7 @@ import { useI18n } from 'vue-i18n';
 import stories_en_US from '../data/stories_en_US.json';
 import stories_zh_CN from '../data/stories_zh_CN.json';
 import stories_zh_TW from '../data/stories_zh_TW.json';
-import { FullScreen } from '@element-plus/icons-vue'
+import { FullScreen, Close } from '@element-plus/icons-vue'
 
 const { locale } = useI18n();
 
@@ -87,11 +90,37 @@ setActiveStories();
     opacity: 0.75;
 }
 
-.dialog-button {
+.open-dialog-button {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+}
+
+.custom-overlay {
+    position: absolute;
+    top: 0px;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.custom-dialog {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.close-dialog-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;
     background: rgba(255, 255, 255, 0.8);
     border: none;
 }
