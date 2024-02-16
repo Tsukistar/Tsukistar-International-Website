@@ -7,12 +7,11 @@
             </el-carousel-item>
         </el-carousel>
         <div class="click-notification-text">{{ activeStories[activeCarouselIndex].content }}</div>
-    </div>
-    <div class="custom-overlay" v-if="dialogVisible">
-        <div class="custom-dialog">
-            <img :src="`/assets/image/GalleryView/${activeStories[clickCarouselIndex].imageURL}`"
-                style="width: auto" />
+        <div class="custom-overlay" v-if="dialogVisible">
+            <div class="custom-dialog">
+                <img :src="`/assets/image/GalleryView/${activeStories[clickCarouselIndex].imageURL}`" style="width: auto" />
                 <el-button class="close-dialog-button" :icon="Close" @click="dialogVisible = false" />
+            </div>
         </div>
     </div>
 </template>
@@ -61,8 +60,6 @@ const handleClickCarousel = (index: number) => {
 watch(locale, () => {
     setActiveStories();
 });
-
-setActiveStories();
 
 </script>
 
