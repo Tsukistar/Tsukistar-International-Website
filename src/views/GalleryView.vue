@@ -27,27 +27,21 @@ import { FullScreen, Close } from '@element-plus/icons-vue'
 
 const { locale } = useI18n();
 
-interface Story {
-    index: number;
-    imageURL: string;
-    content: string;
-}
-
-let activeStories: Story[];
+const activeStories = ref(stories_zh_CN);
 
 const setActiveStories = () => {
     switch (locale.value) {
         case 'en-US':
-            activeStories = stories_en_US;
+            activeStories.value = stories_en_US;
             break;
         case 'zh-CN':
-            activeStories = stories_zh_CN;
+            activeStories.value = stories_zh_CN;
             break;
         case 'zh-TW':
-            activeStories = stories_zh_TW;
+            activeStories.value = stories_zh_TW;
             break;
         default:
-            activeStories = stories_en_US;
+            activeStories.value = stories_en_US;
             break;
     }
 };
