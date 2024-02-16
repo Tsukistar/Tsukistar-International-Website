@@ -2,7 +2,7 @@
 <template>
     <el-menu mode="horizontal" :ellipsis="false" :default-active="activePath">
         <el-menu-item index="logo" @click="goTo('Home')">
-            <img class="logo" src="../assets/image/logo.png" alt="Logo" />
+            <img class="logo" src="/assets/image/logo.png" alt="Logo" />
         </el-menu-item>
         <div class="flex-grow" />
         <el-menu-item index="" @click="goTo('Home')">{{ $t('home') }}</el-menu-item>

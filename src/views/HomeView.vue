@@ -1,13 +1,13 @@
 <template>
     <div class="container">
         <video ref="videoRef" autoplay loop muted class="background-video">
-            <source src="../assets/background-video.mp4" type="video/mp4">
+            <source src="/assets/background-video.mp4" type="video/mp4">
         </video>
         <div class="overlay">
-            <img class="logo" src="../assets/image/logo.png" alt="Tsukistar's Logo">
+            <img class="logo" src="/assets/image/logo.png" alt="Tsukistar's Logo">
             <h1 class="slogan">Coding for the wonderful life!</h1>
-            <img class="mouse" src="../assets/image/HomeView/PhMouseSimpleWhite.svg" alt="mouse SVG">
-            <img class="arrow-down" src="../assets/image/HomeView/PhArrowDownLightWhite.svg" alt="Arrow SVG">
+            <img class="mouse" src="/assets/image/HomeView/PhMouseSimpleWhite.svg" alt="mouse SVG">
+            <img class="arrow-down" src="/assets/image/HomeView/PhArrowDownLightWhite.svg" alt="Arrow SVG">
         </div>
     </div>
 </template>

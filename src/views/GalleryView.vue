@@ -2,7 +2,7 @@
     <div class="gallery">
         <el-carousel :interval="4000" type="card" height="500px" style="width: 100%;" @change="handleCarouselChange">
             <el-carousel-item v-for="story in activeStories" :key="story.index" style="display: block;">
-                <img :src="`/src/assets/image/GalleryView/${story.imageURL}`" alt="Test Image" style="width: 100%;" />
+                <img :src="`/assets/image/GalleryView/${story.imageURL}`" alt="Test Image" style="width: 100%;" />
                 <el-button class="dialog-button" :icon="FullScreen" @click="handleClickCarousel(story.index)" />
             </el-carousel-item>
         </el-carousel>
