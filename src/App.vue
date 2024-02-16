@@ -18,8 +18,8 @@
 			</el-footer>
 		</transition>
 		<div class="mouse-scroll-img" v-if="showHeaderFooter">
-			<img class="mouse" src="./assets/image/HomeView/PhMouseSimple.svg" alt="mouse SVG">
-			<img class="arrow-down" src="./assets/image/HomeView/PhArrowDownLight.svg" alt="Arrow SVG">
+			<img class="mouse" src="/assets/image/HomeView/PhMouseSimple.svg" alt="mouse SVG">
+			<img class="arrow-down" src="/assets/image/HomeView/PhArrowDownLight.svg" alt="Arrow SVG">
 		</div>
 	</el-container>
 </template>
