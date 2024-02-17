@@ -6,7 +6,7 @@
         <div class="overlay">
             <img class="logo" src="/assets/image/logo.png" alt="Tsukistar's Logo">
             <h1 class="slogan">Coding for the wonderful life!</h1>
-            <img class="mouse" src="/assets/image/HomeView/PhMouseSimpleWhite.svg" alt="mouse SVG">
+            <img class="mouse" src="/assets/image/HomeView/PhMouseSimpleWhite.svg" alt="mouse SVG" @click="handleClick">
             <img class="arrow-down" src="/assets/image/HomeView/PhArrowDownLightWhite.svg" alt="Arrow SVG">
         </div>
     </div>
@@ -14,8 +14,13 @@
   
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const videoRef = ref()
+const handleClick = () => {
+    router.push('/doing');
+}
 
 </script>
   
@@ -67,6 +72,7 @@ const videoRef = ref()
     width: 30px;
     margin-top: 50px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .arrow-down {

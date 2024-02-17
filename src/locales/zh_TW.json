@@ -1,6 +1,6 @@
 {
     "title": "星河夜夢記",
-    "introduction": "你好呀，我是月落星河Tsukistar，是一名前端开发工程师，同时也是一名个人博主和一名主播。",
+    "introduction": "你好呀，我是月落星河Tsukistar，主職前端方向軟件工程師，持續向獨立開發者/個人博主/主播努力中，希望交到好多好朋友！我喜歡將自己的想法用各種方式表達出來，不管是一份代碼、一幅畫、一首歌，還是一篇文章、一句祝福，希望這些能為你們帶來快樂。人生海海，很高興能夠與你相遇。",
     "home": "首頁",
     "doing": "動態",
     "Gallery": "相冊",
@@ -12,5 +12,6 @@
     "singing": "只為你而唱的歌",
     "streaming": "在Youtube和圖奇上直播",
     "clickPicture": "點擊每張插圖都可以看到一個小故事哦",
-    "followMe": "快來關注我吧"
+    "aboutMeTitle": "關於我",
+    "aboutMeContent": "Hi I'm Tsukistar, a front-end software engineer who is also an blogger and a streamer. Hope to make lots of good friends!"
 }
