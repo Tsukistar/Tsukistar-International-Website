@@ -1,5 +1,5 @@
 <template>
-	<el-container>
+	<el-container style="background-color: black;">
 		<transition name="fade">
 			<el-header v-if="showHeaderFooter">
 				<Header />
@@ -37,19 +37,22 @@ const showHeaderFooter = ref(false)
 
 // 图片资源列表
 const imagePaths = [
-	'/assets/image/GalleryView/2024-coming.jpg',
-	'/assets/image/GalleryView/2024-new-year-Eve.jpg',
-	'/assets/image/GalleryView/2024-valentine.jpg',
-	'/assets/image/GalleryView/idol.jpg',
-	'/assets/image/GalleryView/strawberry-night.jpg',
-	'/assets/image/GalleryView/wishing.jpg',
+	// Doing
 	'/assets/image/DoingView/coding.jpg',
 	'/assets/image/DoingView/gaming.jpg',
 	'/assets/image/DoingView/live.jpg',
 	'/assets/image/DoingView/onecomme.jpg',
 	'/assets/image/DoingView/painting.jpg',
 	'/assets/image/DoingView/singing.jpg',
-	// 添加更多需要预加载的图片路径
+	// Gallery	
+	'/assets/image/GalleryView/2024-coming.jpg',
+	'/assets/image/GalleryView/2024-new-year-Eve.jpg',
+	'/assets/image/GalleryView/2024-valentine.jpg',
+	'/assets/image/GalleryView/idol.jpg',
+	'/assets/image/GalleryView/strawberry-night.jpg',
+	'/assets/image/GalleryView/wishing.jpg',
+	// About
+	'/assets/image/AboutView/tsukistar.png',
 ];
 
 // 预加载图片函数
