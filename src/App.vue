@@ -116,9 +116,6 @@ onMounted(() => {
 
 onUnmounted(() => {
 	window.removeEventListener('wheel', handleScroll);
-	window.addEventListener('mousedown', handleMouseDown);
-	window.addEventListener('mousemove', handleMouseMove);
-	window.addEventListener('mouseup', handleMouseUp);
 	window.addEventListener('touchstart', handleTouchStart);
 	window.addEventListener('touchmove', handleTouchMove);
 	window.addEventListener('touchend', handleTouchEnd);
