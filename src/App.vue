@@ -46,6 +46,7 @@ watch(() => route.path, (newPath: string) => {
 	}
 });
 
+// Mouse scroll event
 let lastScrollTime = 0;
 const throttleTime = 500;
 
@@ -70,12 +71,57 @@ const handleScroll = (event: WheelEvent) => {
 	}
 };
 
+// Touch event
+let isDragging = false;
+let startY = 0;
+
+const handleTouchStart = (event: TouchEvent) => {
+	isDragging = true;
+	startY = event.touches[0].clientY;
+};
+
+const handleTouchMove = (event: TouchEvent) => {
+	if (!isDragging) return;
+
+	const currentRouteIndex = routes.indexOf(router.currentRoute.value.path);
+	const currentTime = new Date().getTime();
+
+	if (currentTime - lastScrollTime > throttleTime) {
+		if (event.touches[0].clientY < startY && currentRouteIndex < routes.length - 1) {
+			// Swipe up
+			transitionName.value = 'slide-fade-up';
+			router.push(routes[currentRouteIndex + 1]);
+		} else if (event.touches[0].clientY > startY && currentRouteIndex > 0) {
+			// Swipe down
+			transitionName.value = 'slide-fade-down';
+			router.push(routes[currentRouteIndex - 1]);
+		}
+
+		lastScrollTime = currentTime;
+	}
+
+	startY = event.touches[0].clientY;
+};
+
+const handleTouchEnd = (event: TouchEvent) => {
+	isDragging = false;
+};
+
 onMounted(() => {
-	window.addEventListener('wheel', handleScroll)
+	window.addEventListener('wheel', handleScroll);
+	window.addEventListener('touchstart', handleTouchStart);
+	window.addEventListener('touchmove', handleTouchMove);
+	window.addEventListener('touchend', handleTouchEnd);
 })
 
 onUnmounted(() => {
-	window.removeEventListener('wheel', handleScroll)
+	window.removeEventListener('wheel', handleScroll);
+	window.addEventListener('mousedown', handleMouseDown);
+	window.addEventListener('mousemove', handleMouseMove);
+	window.addEventListener('mouseup', handleMouseUp);
+	window.addEventListener('touchstart', handleTouchStart);
+	window.addEventListener('touchmove', handleTouchMove);
+	window.addEventListener('touchend', handleTouchEnd);
 })
 
 </script>

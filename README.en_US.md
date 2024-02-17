@@ -40,4 +40,4 @@ Thanks [readme.so](https://readme.so/) for helping me write the readme.en_US.md 
 
 Thanks [colorhunt.co](https://colorhunt.co/) for giving me some Color Palettes.
 
-All of the icons this website used are from [Phosphor Icons](https://github.com/phosphor-icons/core) which License is MIT, and I've found it in [Yesicon](https://yesicon.app)
+All of the icons this website used are from [Phosphor Icons](https://github.com/phosphor-icons/core) and [Prime Icons]() which License is MIT, and I've found it in [Yesicon](https://yesicon.app).
