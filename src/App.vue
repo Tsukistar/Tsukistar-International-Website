@@ -35,6 +35,32 @@ const routes = ['/', '/doing', '/gallery', '/about']
 const router = useRouter()
 const showHeaderFooter = ref(false)
 
+// 图片资源列表
+const imagePaths = [
+	'/assets/image/GalleryView/2024-coming.jpg',
+	'/assets/image/GalleryView/2024-new-year-Eve.jpg',
+	'/assets/image/GalleryView/2024-valentine.jpg',
+	'/assets/image/GalleryView/idol.jpg',
+	'/assets/image/GalleryView/strawberry-night.jpg',
+	'/assets/image/GalleryView/wishing.jpg',
+	'/assets/image/DoingView/coding.jpg',
+	'/assets/image/DoingView/gaming.jpg',
+	'/assets/image/DoingView/live.jpg',
+	'/assets/image/DoingView/onecomme.jpg',
+	'/assets/image/DoingView/painting.jpg',
+	'/assets/image/DoingView/singing.jpg',
+	// 添加更多需要预加载的图片路径
+];
+
+// 预加载图片函数
+const preloadImages = (paths: string[]) => {
+	paths.forEach(path => {
+		const img = new Image();
+		img.src = path;
+	});
+};
+
+
 watch(() => route.path, (newPath: string) => {
 	if (!showHeaderFooter.value) {
 		setTimeout(() => {
@@ -108,6 +134,7 @@ const handleTouchEnd = (event: TouchEvent) => {
 };
 
 onMounted(() => {
+	preloadImages(imagePaths);
 	window.addEventListener('wheel', handleScroll);
 	window.addEventListener('touchstart', handleTouchStart);
 	window.addEventListener('touchmove', handleTouchMove);
@@ -121,6 +148,10 @@ onUnmounted(() => {
 	window.addEventListener('touchend', handleTouchEnd);
 })
 
+// 路由导航钩子，当路由发生变化时触发图片预加载
+router.afterEach(() => {
+	preloadImages(imagePaths);
+});
 </script>
 
 <style scoped>
