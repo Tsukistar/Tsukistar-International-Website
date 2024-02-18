@@ -26,6 +26,7 @@ const handleClick = () => {
   
 <style scoped>
 .container {
+    background-color: rgba(0, 0, 0, 0.8);
     position: relative;
     width: 100%;
     height: 100vh;
