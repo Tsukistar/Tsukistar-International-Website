@@ -1,5 +1,5 @@
 <template>
-	<el-container style="background-color: black;">
+	<el-container>
 		<transition name="fade">
 			<el-header v-if="showHeaderFooter">
 				<Header />
