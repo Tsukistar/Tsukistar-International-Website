@@ -22,7 +22,7 @@
                     @click="openURL('https://www.youtube.com/channel/UCPkuyPJuuFL7UWue-qtqzFQ')" />
                 <img class="click-logo" src="/assets/image/AboutView/PhTwitchLogoBold.svg"
                     @click="openURL('https://www.twitch.tv/tsukistarCN')" />
-                <img class="click-logo" src="/assets/image/AboutView/SimpleIconsPatreon.svg"
+                <img class="click-logo" src="/assets/image/AboutView/PhPatreonLogoFill.svg"
                     @click="openURL('https://patreon.com/TsukistarGlobal')" />
             </div>
         </div>
