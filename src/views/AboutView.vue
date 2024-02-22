@@ -14,10 +14,8 @@
                     @click="openURL('https://tsukistar.xlog.app/')" />
                 <img class="click-logo" src="/assets/image/AboutView/PrimeGithub.svg"
                     @click="openURL('https://github.com/Tsukistar/')" />
-                <img class="click-logo" src="/assets/image/AboutView/PrimeTwitter.svg"
-                    @click="openURL(TwitterURL)" />
-                <img class="click-logo" src="/assets/image/AboutView/PrimeTelegram.svg"
-                    @click="openURL(TelegramURL)" />
+                <img class="click-logo" src="/assets/image/AboutView/PrimeTwitter.svg" @click="openURL(TwitterURL)" />
+                <img class="click-logo" src="/assets/image/AboutView/PrimeTelegram.svg" @click="openURL(TelegramURL)" />
                 <img class="click-logo" src="/assets/image/AboutView/PrimeYoutube.svg"
                     @click="openURL('https://www.youtube.com/channel/UCPkuyPJuuFL7UWue-qtqzFQ')" />
                 <img class="click-logo" src="/assets/image/AboutView/PhTwitchLogoBold.svg"

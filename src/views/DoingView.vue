@@ -69,10 +69,10 @@ const handleCardClick = (websiteName:string) => {
             window.open('https://github.com/Tsukistar', '_blank');
             break;
         case 'OneComme':
-            window.open('https://www.google.com', '_blank');
+            window.open('about:blank', '_blank');
             break;
         case 'Singing':
-            window.open('https://www.google.com', '_blank');
+            window.open('about:blank', '_blank');
             break;
         case 'Streaming':
             window.open('https://www.youtube.com/channel/UCPkuyPJuuFL7UWue-qtqzFQ', '_blank');

@@ -29,6 +29,7 @@ import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import { useScreenOrientationStore } from './stores'
 
 const route = useRoute()
 const routes = ['/', '/doing', '/gallery', '/about']
@@ -136,8 +137,11 @@ const handleTouchEnd = (event: TouchEvent) => {
 	isDragging = false;
 };
 
+const screenStore = useScreenOrientationStore();
+
 onMounted(() => {
 	preloadImages(imagePaths);
+	console.log('screenStore:', screenStore.orientation);
 	window.addEventListener('wheel', handleScroll);
 	window.addEventListener('touchstart', handleTouchStart);
 	window.addEventListener('touchmove', handleTouchMove);

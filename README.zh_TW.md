@@ -4,9 +4,9 @@
 
 # 月落星河的國際化個人網站
 
-月落星河的全新國際個人網站是使用 Vue 3 開發的，並融合了許多新功能，如多語言支持、自定義對話框、頁面過渡動畫、平滑滾動、圖像預加載等等，以及我從未嘗試過的各種創新元素。
+月落星河的全新國際化個人網站採用 Vue 3 開發，並嘗試了許多我以前從未嘗試過的新功能，例如多語言支持、自定義對話框、頁面過渡動畫、監聽滑鼠滾動與屏幕滑動事件切換路由、圖片預加載等。
 
-在不久的將來，它將變得響應式，確保在移動設備和 PC 上都有最佳的瀏覽體驗。此外，我計劃引入狀態管理工具，如 Pinia，以優化現有的代碼庫。
+最近我正在進行網站的響應式優化，使其在移動設備和 PC 上都有絕佳的瀏覽體驗。同時我正在引入 Pinia 進行一部分的狀態管理，並對現有的程式碼進行優化。
 
 ## 作者
 
@@ -37,4 +37,4 @@
 
 感謝 [colorhunt.co](https://colorhunt.co/) 給我提供一些配色方案。
 
-本網站使用的所有圖標均來自 [Phosphor Icons](https://github.com/phosphor-icons/core) 和 [Prime Icons]()，其許可證為 MIT，我在[Yesicon](https://yesicon.app) 找到了它們。
+感謝 [Yesicon](https://yesicon.app) 提供我尋找圖標的渠道。本網站所使用的所有圖標均來自 [Phosphor Icons](https://github.com/phosphor-icons/core) 和 [Prime Icons](https://github.com/primefaces/primeicons)，其許可證為 MIT。

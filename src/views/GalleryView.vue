@@ -1,6 +1,6 @@
 <template>
     <div class="gallery">
-        <el-carousel :interval="4000" type="card" height="500px" style="width: 100%;" @change="handleCarouselChange">
+        <el-carousel :interval="4000" type="card" height="65vh" style="width: 100%;" @change="handleCarouselChange">
             <el-carousel-item v-for="story in activeStories" :key="story.index" style="display: block;">
                 <img :src="`/assets/image/GalleryView/${story.imageURL}`" alt="Test Image" style="width: 100%;" />
                 <el-button class="open-dialog-button" :icon="FullScreen" @click="handleClickCarousel(story.index)" />
@@ -76,7 +76,7 @@ watch(locale, () => {
 .click-notification-text {
     text-align: center;
     margin: 30px 60px 0 60px;
-    font-size: 20px;
+    font-size: 1.5rem;
     color: #475669;
     opacity: 0.75;
 }
