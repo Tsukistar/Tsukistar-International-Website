@@ -54,6 +54,7 @@ watch(locale, () => {
 </script>
 
 <style scoped>
+/* 针对PC的样式 */
 @media (min-width: 1024px) {
     .about {
         margin-top: 5vh;
@@ -80,6 +81,7 @@ watch(locale, () => {
 
     .me-image {
         width: 100%;
+        margin-bottom: 2vh;
     }
 
     .information-and-contract {
@@ -126,6 +128,106 @@ watch(locale, () => {
     }
 
     .click-logo {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .click-logo:hover {
+        transform: scale(1.2);
+    }
+}
+
+/* 针对iPad端竖屏时的样式 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        margin-top: 5vh;
+    }
+
+    .name-and-image {
+        width: 60%;
+    }
+
+    .me-image {
+        width: 100%;
+    }
+
+    .information-and-contract {
+        padding: 0 2vw;
+        width: 100%;
+    }
+
+    .me-information-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+
+    .me-information-text {
+        font-size: 1.5rem;
+        margin-bottom: 1vh;
+    }
+
+    .logos {
+        margin-top: 1vh;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .click-logo {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .click-logo:hover {
+        transform: scale(1.2);
+    }
+}
+
+/* 针对手机端竖屏时的样式 */
+@media only screen and (max-device-width: 480px) {
+    .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+        margin-top: 10vh;
+    }
+
+    .me-image {
+        height: 40vh;
+    }
+
+    .information-and-contract {
+        padding: 0 2vw;
+        width: 100%;
+    }
+
+    .me-information-title {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }
+
+    .me-information-text {
+        font-size: 0.8rem;
+    }
+
+    .logos {
+        margin-top: 1vh;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .click-logo {
+        
         cursor: pointer;
         transition: transform 0.3s ease;
     }

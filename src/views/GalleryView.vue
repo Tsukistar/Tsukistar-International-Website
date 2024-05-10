@@ -1,5 +1,6 @@
 <template>
     <div class="gallery">
+        <!--TODO：添加一个时间轴表现插画的出现先后顺序-->
         <el-carousel :interval="4000" type="card" height="65vh" style="width: 100%;" @change="handleCarouselChange">
             <el-carousel-item v-for="story in activeStories" :key="story.index" style="display: block;">
                 <img :src="`/assets/image/GalleryView/${story.imageURL}`" alt="Test Image" style="width: 100%;" />

@@ -210,7 +210,7 @@ router.afterEach(() => {
 	width: 30px;
 	animation: fadeInOut 2s infinite;
 }
-
+/* 鼠标按钮对应箭头，只会出现在PC端 */
 @keyframes fadeInOut {
 	0% {
 		opacity: 0;
@@ -238,7 +238,7 @@ router.afterEach(() => {
 
 .slide-fade-down-enter,
 .slide-fade-down-leave-to {
-	transform: translateY(100px);
+	transform: translateY(100vh);
 	opacity: 0;
 }
 
@@ -252,7 +252,7 @@ router.afterEach(() => {
 
 .slide-fade-up-enter,
 .slide-fade-up-leave-to {
-	transform: translateY(-100px);
+	transform: translateY(-100vh);
 	opacity: 0;
 }
 
@@ -264,5 +264,26 @@ router.afterEach(() => {
 .fade-enter,
 .fade-leave-to {
 	opacity: 0;
+}
+
+/* 针对PC端的样式 */
+@media (min-width: 1024px) {
+
+}
+
+/* 针对iPad端竖屏时的样式 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+	
+}
+
+/* 针对手机端竖屏时的样式 */
+@media only screen and (max-device-width: 480px) {
+	.el-footer {
+		height: 60px;
+	}
+
+	.mouse-scroll-img {
+		display: none;
+	}
 }
 </style>
