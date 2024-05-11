@@ -278,6 +278,10 @@ router.afterEach(() => {
 
 /* 针对手机端竖屏时的样式 */
 @media only screen and (max-device-width: 480px) {
+	.el-header {
+		padding: 0;
+	}
+
 	.el-footer {
 		height: 60px;
 	}

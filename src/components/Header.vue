@@ -1,6 +1,9 @@
 <!--Header.vue-->
 <template>
-    <el-menu mode="horizontal" :ellipsis="false" :default-active="activePath">
+    <div class="top-menu-mobile">
+        <img class="logo" src="/assets/image/logo.png" alt="Logo" />
+    </div>
+    <el-menu class="top-menu-others" mode="horizontal" :ellipsis="false" :default-active="activePath">
         <el-menu-item index="logo" @click="goTo('Home')">
             <img class="logo" src="/assets/image/logo.png" alt="Logo" />
         </el-menu-item>
@@ -55,24 +58,74 @@ watch(() => route.path, newPath => {
 </script>
 
 <style scoped>
-.logo {
-    width: 100px;
+/* 针对PC端的样式 */
+@media (min-width: 1024px) {
+    .logo {
+        width: 100px;
+    }
+
+    .flex-grow {
+        flex-grow: 1;
+    }
+
+    .right-menu {
+        line-height: 55px;
+    }
+
+    .select-language {
+        line-height: 55px;
+        margin-left: 20px;
+    }
+
+    .el-button+.el-button {
+        margin-left: 0;
+    }
+
+    .top-menu-mobile {
+        display: none;
+    }
 }
 
-.flex-grow {
-    flex-grow: 1;
+/* 针对iPad端竖屏时的样式 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .logo {
+        width: 100px;
+    }
+
+    .flex-grow {
+        flex-grow: 1;
+    }
+
+    .right-menu {
+        line-height: 55px;
+    }
+
+    .select-language {
+        line-height: 55px;
+        margin-left: 20px;
+    }
+
+    .el-button+.el-button {
+        margin-left: 0;
+    }
+
+    .top-menu-mobile {
+        display: none;
+    }
 }
 
-.right-menu {
-    line-height: 55px;
-}
+/* 针对手机端竖屏时的样式 */
+@media only screen and (max-device-width: 480px) {
+    .top-menu-others {
+        display: none;
+    }
 
-.select-language {
-    line-height: 55px;
-    margin-left: 20px;
-}
+    .top-menu-mobile {
+        position: relative;
+    }
 
-.el-button+.el-button {
-    margin-left: 0;
+    .logo {
+        width: 80px;
+    }
 }
 </style>

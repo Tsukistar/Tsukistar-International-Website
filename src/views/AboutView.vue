@@ -201,7 +201,7 @@ watch(locale, () => {
     }
 
     .me-image {
-        height: 40vh;
+        height: 30vh;
     }
 
     .information-and-contract {
