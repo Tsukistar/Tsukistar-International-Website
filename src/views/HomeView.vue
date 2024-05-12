@@ -3,6 +3,7 @@
         <video ref="videoRef" autoplay loop muted class="background-video">
             <source src="/assets/background-video.mp4" type="video/mp4">
         </video>
+        <img src="/assets/image/GalleryView/2024-coming.jpg" class="bg-img" />
         <div class="overlay">
             <img class="logo" src="/assets/image/logo.png" alt="Tsukistar's Logo">
             <h1 class="slogan">Coding for the wonderful life!</h1>
@@ -11,7 +12,7 @@
         </div>
     </div>
 </template>
-  
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -23,10 +24,10 @@ const handleClick = () => {
 }
 
 </script>
-  
+
 <style scoped>
 .container {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     position: relative;
     width: 100%;
     height: 100vh;
@@ -53,13 +54,6 @@ const handleClick = () => {
     justify-content: center;
 }
 
-.logo {
-    width: 150px;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-}
-
 .slogan {
     color: white;
     font-size: 5rem;
@@ -82,17 +76,70 @@ const handleClick = () => {
 }
 
 @keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* 针对PC端的样式 */
+@media (min-width: 1024px) {
+    .bg-img {
+        display: none;
+    }
+
+    .logo {
+        width: 150px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* 针对iPad端竖屏时的样式 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
+
+/* 针对手机端竖屏时的样式 */
+@media only screen and (max-device-width: 480px) {
+    .bg-img {
+        height: -webkit-fill-available;
+    }
+
+    .logo {
+        width: 150px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+
+    .slogan {
+        font-size: 1.5rem;
+    }
+
+    .background-video {
+        display: none;
+    }
+
+    .el-header {
+        padding: 0;
+    }
+
+    .el-footer {
+        height: 60px;
+    }
+
+    .mouse-scroll-img {
+        display: none;
+    }
 }
 </style>

@@ -197,7 +197,7 @@ watch(locale, () => {
         justify-content: center;
         align-items: center;
         min-height: 60vh;
-        margin-top: 10vh;
+        margin-top: 13vh;
     }
 
     .me-image {

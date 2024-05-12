@@ -89,7 +89,7 @@ watch(() => route.path, newPath => {
 /* 针对iPad端竖屏时的样式 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
     .logo {
-        width: 100px;
+        width: 150px;
     }
 
     .flex-grow {
@@ -125,7 +125,7 @@ watch(() => route.path, newPath => {
     }
 
     .logo {
-        width: 80px;
+        width: 150px;
     }
 }
 </style>
