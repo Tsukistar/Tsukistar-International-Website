@@ -14,7 +14,7 @@ const browserLanguage = navigator.language;
 
 // set the default language
 let defaultLanguage = "en-US";
-let supportedLanguages = ["en-US", "zh-CN", "zh-TW"];
+const supportedLanguages = ["en-US", "zh-CN", "zh-TW"];
 if (supportedLanguages.indexOf(browserLanguage) > -1) {
     defaultLanguage = browserLanguage;
 }
